@@ -1,0 +1,32 @@
+{
+  "config": {
+    "buffer_threshold_bytes": 10485760,
+    "buffer_threshold_seconds": 60,
+    "chaos_mode": "false",
+    "config_dependency_error_count": 0,
+    "config_dependency_valid": true,
+    "data_dir": "./data",
+    "data_output_plugin_name": "Snowflake",
+    "data_source_batch_size_bytes": 0,
+    "data_source_batch_size_seconds": 0,
+    "data_source_plugin_name": "Mssql",
+    "input_format": "row",
+    "output_format": "parquet",
+    "schema_output_plugin_name": "",
+    "transform_batch_order_fields": "NULL_VALUE",
+    "transform_batch_partition_fields": "",
+    "transform_batch_time_fields": "",
+    "transform_batch_time_units": "",
+    "transform_flatten_events": "false",
+    "transform_namespace_fields": "NULL_VALUE"
+  },
+  "datetime": "2026-05-02T18:27:18Z",
+  "pipeline_name": "cursor_semantic_validation_fresh_20260502_1927",
+  "run_id": "bYMaRS1PY14W3MilmtswGMIYz9k1BrYG",
+  "start_time": "2026-05-02T18:27:18Z",
+  "status": "Running",
+  "tenant": "_",
+  "type": "config",
+  "version": "0.1.0",
+  "workspace_name": "cursor_semantic_validation_fresh_20260502_1927"
+}

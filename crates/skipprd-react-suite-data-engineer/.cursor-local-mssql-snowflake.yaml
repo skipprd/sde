@@ -1,0 +1,28 @@
+skippr:
+  workspace: cursor_semantic_validation
+  tenant: _
+  skipprd_el_storage_mode: local
+
+pipelines:
+  semantic_validation:
+    data_source: data_sources.mssql
+    data_sink: data_sinks.snowflake
+
+data_sources:
+  mssql:
+    Mssql:
+      connection_string: "server=tcp:127.0.0.1,1433;database=testdb;user id=sa;password=Skippr!Test123;TrustServerCertificate=true"
+      tables: [dbo.customers, dbo.orders, dbo.order_items]
+
+data_sinks:
+  snowflake:
+    Snowflake:
+      account: RSSKNWT-KC53195
+      user: paulhudson
+      database: ANALYTICS
+      schema: RAW_CURSOR_SEMANTIC_VALIDATION
+      warehouse: COMPUTE_WH
+      role: ACCOUNTADMIN
+      private_key_path: /Users/huders2000/Documents/sites/skippr/skipprd/crates/skipprd-react-suite-data-engineer/snowflake_key.p8
+
+schema_sinks: {}

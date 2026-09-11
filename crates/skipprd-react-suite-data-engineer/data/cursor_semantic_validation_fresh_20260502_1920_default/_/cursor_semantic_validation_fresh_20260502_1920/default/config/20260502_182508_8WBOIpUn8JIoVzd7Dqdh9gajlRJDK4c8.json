@@ -1,0 +1,32 @@
+{
+  "config": {
+    "buffer_threshold_bytes": 10485760,
+    "buffer_threshold_seconds": 60,
+    "chaos_mode": "false",
+    "config_dependency_error_count": 0,
+    "config_dependency_valid": true,
+    "data_dir": "./data",
+    "data_output_plugin_name": "",
+    "data_source_batch_size_bytes": 0,
+    "data_source_batch_size_seconds": 0,
+    "data_source_plugin_name": "",
+    "input_format": "",
+    "output_format": "",
+    "schema_output_plugin_name": "",
+    "transform_batch_order_fields": "NULL_VALUE",
+    "transform_batch_partition_fields": "",
+    "transform_batch_time_fields": "",
+    "transform_batch_time_units": "",
+    "transform_flatten_events": "false",
+    "transform_namespace_fields": "NULL_VALUE"
+  },
+  "datetime": "2026-05-02T18:25:08Z",
+  "pipeline_name": "default",
+  "run_id": "8WBOIpUn8JIoVzd7Dqdh9gajlRJDK4c8",
+  "start_time": "2026-05-02T18:25:08Z",
+  "status": "Running",
+  "tenant": "_",
+  "type": "config",
+  "version": "0.1.0",
+  "workspace_name": "cursor_semantic_validation_fresh_20260502_1920"
+}

@@ -1,0 +1,41 @@
+[workspace]
+resolver = "2"
+members = [
+    "crates/sde",
+    "crates/skippr-runtime-sdk",
+    "crates/skipprd-react-suite-data-engineer",
+    "crates/skipprd-react-suite-data-engineer/src/modules/provider-postgres",
+    "crates/skipprd-react-suite-data-engineer/src/modules/provider-bigquery",
+    "crates/skipprd-react-suite-data-engineer/src/modules/provider-athena",
+    "crates/skipprd-react-suite-data-engineer/src/modules/provider-dbt",
+    "crates/skipprd-react-suite-data-engineer/src/modules/provider-catalog",
+    "crates/skipprd-react-suite-data-engineer/src/modules/provider-skippr",
+    "crates/skipprd-react-suite-data-engineer/src/modules/provider-snowflake",
+    "crates/skipprd-react-suite-data-engineer/src/modules/provider-mssql",
+    "crates/skipprd-react-suite-data-engineer/src/modules/provider-databricks",
+    "crates/skipprd-react-suite-data-engineer/src/modules/provider-synapse",
+    "crates/skipprd-react-suite-data-engineer/src/modules/provider-redshift",
+    "crates/skipprd-react-suite-data-engineer/src/modules/provider-clickhouse",
+    "crates/skipprd-react-suite-data-engineer/src/modules/provider-motherduck",
+    "plugins/data_source/*",
+    "plugins/shared/api_source",
+    "plugins/shared/link_graph",
+    "plugins/shared/backlinks",
+]
+
+[workspace.dependencies]
+async-trait = "0.1.77"
+clap = { version = "4.0.32", features = ["derive"] }
+serde = "1.0.105"
+serde_json = "1.0.85"
+tokio = { version = "1", features = ["full"] }
+tracing = "0.1"
+skippr-runtime-sdk = { path = "crates/skippr-runtime-sdk" }
+react-core = { path = "../react/src/core" }
+react = { path = "../react/src/runtime" }
+react-module-storage-s3 = { path = "../react/src/modules/adaptors/storage-s3" }
+react-module-storage-local = { path = "../react/src/modules/adaptors/storage-local" }
+react-module-storage-memory = { path = "../react/src/modules/adaptors/storage-memory" }
+react-module-provider-vector-lance = { path = "../react/src/modules/providers/vector-lance" }
+react-suite-debugger = { path = "../react/src/suites/suite_debugger" }
+reqwest = { version = "0.12", default-features = false, features = ["blocking", "json", "rustls-tls"] }
