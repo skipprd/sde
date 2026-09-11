@@ -43,7 +43,7 @@ Silver and Gold Models
 1. **Discover** -- reads source metadata such as table names, column names, and types. Destination mapping is determined here, using deterministic logic rather than model output.
 2. **Sync** -- extracts rows and files from the source and writes them into bronze tables in your destination. API sources can declare [how each table lands](/advanced/source-landing-semantics) (for example replace-by-date for mutable reports).
 3. **Model** -- drafts a dbt project with source definitions, staging models, and business-facing models for review.
-4. **Checks and tests** -- While `sde model` runs, the workflow already compiles and validates models against the destination (those are **internal** steps, not a `skippr validate` command). When you want **dbt tests** as a separate step — for example in CI after a model run — use [`sde test run`](/cli/test) (see [`sde test`](/cli/test)).
+4. **Checks and tests** -- While `sde model` runs, the workflow already compiles and validates models against the destination (those are **internal** steps, not a `sde validate` command). When you want **dbt tests** as a separate step — for example in CI after a model run — use [`sde test run`](/cli/test) (see [`sde test`](/cli/test)).
 
 ## Incremental by default
 
