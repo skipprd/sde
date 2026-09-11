@@ -1,7 +1,7 @@
 ---
-description: "Flag the latest Skippr run as good or bad with skippr feedback. Sends comments to support without exposing source rows or warehouse data."
+description: "Flag the latest Skippr run as good or bad with sde feedback. Sends comments to support without exposing source rows or warehouse data."
 ---
-# skippr feedback
+# sde feedback
 
 Attach your feedback to the most recent run for the current project. This is useful after a run completes, stalls, or produces output you want to flag for review and debugging by a Skippr engineer.
 
@@ -10,9 +10,9 @@ The feedback only includes run metadata and your feedback. The Skippr support pl
 ## Usage
 
 ```bash
-skippr feedback --good
-skippr feedback --bad
-skippr feedback --bad --comment "timed out in repair loop"
+sde feedback --good
+sde feedback --bad
+sde feedback --bad --comment "timed out in repair loop"
 ```
 
 The command always targets the most recent primary thread in the active run storage backend for the current project.
@@ -41,11 +41,11 @@ Leave feedback:
 Leave positive feedback after a successful run:
 
 ```bash
-skippr feedback --good --comment "all the data is synced and the auto-generated models are already providing valuable insight"
+sde feedback --good --comment "all the data is synced and the auto-generated models are already providing valuable insight"
 ```
 
 Flag a bad run with a comment:
 
 ```bash
-skippr feedback --bad --comment "synced data, schemas look great, but stalled in review and never finished"
+sde feedback --bad --comment "synced data, schemas look great, but stalled in review and never finished"
 ```

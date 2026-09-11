@@ -36,7 +36,7 @@ Ingestion correctness does not depend on model output. Schema discovery, type ma
 
 ## Where to go next
 
-- [Install](/elt/getting-started/install)
-- [How It Works](/elt/getting-started/how-it-works)
-- [Core Concepts](/elt/advanced/core-concepts)
-- [CDC Guarantees](/elt/cdc/guarantees)
+- [Install](/getting-started/install)
+- [How It Works](/getting-started/how-it-works)
+- [Core Concepts](/advanced/core-concepts)
+- [CDC Guarantees](/cdc/guarantees)

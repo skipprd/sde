@@ -12,7 +12,7 @@ Output is typed, schema-consistent Parquet and warehouse-native tables. Downstre
 - **Structured Parquet** — columnar, compressed, typed.
 - **Schema consistency** — every record follows a validated schema.
 - **Type reconciliation** — when a field’s type changes, Skippr adds a new column instead of mutating in place.
-- **Natural-language to SQL** — [`skippr ask`](/elt/cli/ask) translates questions into SQL against your warehouse tables.
+- **Natural-language to SQL** — [`sde ask`](/cli/ask) translates questions into SQL against your warehouse tables.
 
 ## Pipeline
 
@@ -25,5 +25,5 @@ Row-level data stays on the path from the runner to your destination. See [ELT h
 
 ## Related
 
-- [Data modeling](/elt/product/data-modeling)
-- [`skippr vector`](/elt/cli/vector)
+- [Data modeling](/product/data-modeling)
+- [`sde vector`](/cli/vector)

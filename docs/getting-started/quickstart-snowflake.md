@@ -14,7 +14,7 @@ Six commands to go from a SQL Server database to materialised dbt models in Snow
 - `skippr` on PATH ([Install](install.md) — includes Windows PowerShell one-liner)
 - Python venv with `dbt-core` and `dbt-snowflake`
 - OpenSSL installed for key-pair auth (pre-installed on macOS/Linux; Windows: `winget install OpenSSL`)
-- Authenticated via `skippr user login` (or `SKIPPR_API_KEY` for CI)
+- Authenticated via `sde user login` (or `SKIPPR_API_KEY` for CI)
 - Snowflake and MSSQL credentials in your environment:
 
 ```bash
@@ -31,30 +31,30 @@ Need help with credentials? See the [Snowflake connector guide](../connectors/de
 ```bash
 # 1. Create the project
 mkdir my-workspace && cd my-workspace
-skippr init mssql-migration
+sde init mssql-migration
 
 # 2. Point at your warehouse
-skippr connect warehouse snowflake \
+sde connect warehouse snowflake \
   --database ANALYTICS \
   --schema RAW \
   --warehouse COMPUTE_WH \
   --role ACCOUNTADMIN
 
 # 3. Point at your source
-skippr connect source mssql \
+sde connect source mssql \
   --connection-string '${MSSQL_CONNECTION_STRING}'
 
 # 4. Verify everything is wired up
-skippr doctor
+sde doctor
 
 # 5. Load bronze data
-skippr sync --pipeline mssql-migration --once
+sde sync --pipeline mssql-migration --once
 
 # 6. Generate and validate dbt models
-skippr model --pipeline mssql-migration
+sde model --pipeline mssql-migration
 ```
 
-That's it. `skippr sync --pipeline mssql-migration --once` discovers schemas when needed and loads data into Snowflake; `skippr model --pipeline mssql-migration` then generates a complete dbt project with silver and gold models -- compiled and materialised.
+That's it. `sde sync --pipeline mssql-migration --once` discovers schemas when needed and loads data into Snowflake; `sde model --pipeline mssql-migration` then generates a complete dbt project with silver and gold models -- compiled and materialised.
 
 ## What you get
 
@@ -111,8 +111,8 @@ data_sinks:
 
 ## What's next
 
-- Run `skippr sync --pipeline mssql-migration --once` again -- it is incremental, only new and changed rows are synced.
-- Re-run `skippr model --pipeline mssql-migration` to resume the latest modeling thread. Use `skippr model --pipeline mssql-migration --no-resume` when you want a clean modeling attempt.
+- Run `sde sync --pipeline mssql-migration --once` again -- it is incremental, only new and changed rows are synced.
+- Re-run `sde model --pipeline mssql-migration` to resume the latest modeling thread. Use `sde model --pipeline mssql-migration --no-resume` when you want a clean modeling attempt.
 - The dbt project is yours. Add tests, snapshots, or custom gold models.
 - See [How It Works](how-it-works.md) for the full pipeline breakdown.
 

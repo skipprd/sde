@@ -17,7 +17,7 @@ Use Skippr Cloud ELT as the delivery substrate: configure sources and a warehous
 ## Delivery shape
 
 1. **Assess** — source landscape and warehouse choice.
-2. **Configure** — `skippr.yml`, credentials, [discover](/elt/cli/discover).
+2. **Configure** — `skippr.yml`, credentials, [discover](/cli/discover).
 3. **Deploy** — sync bronze; review generated dbt.
 4. **Support** — iterate models and connectors.
 

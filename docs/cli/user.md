@@ -1,7 +1,7 @@
 ---
-description: "Log in, manage API keys, and check usage with skippr user. SMS login provisions a hosted LLM key and cloud storage—no OpenAI account required."
+description: "Log in, manage API keys, and check usage with sde user. SMS login provisions a hosted LLM key and cloud storage—no OpenAI account required."
 ---
-# skippr user
+# sde user
 
 Manage your Skippr account -- authentication, API keys, billing, and usage. See [Authentication](../getting-started/authentication.md) for the getting-started guide.
 
@@ -14,7 +14,7 @@ Skippr Cloud ELT bills the same four meters as other Cloud capabilities: **vCPU 
 Sign up or log in. Verify via SMS and you're authenticated -- an LLM key and cloud storage are provisioned automatically.
 
 ```bash
-skippr user login
+sde user login
 ```
 
 Session tokens are stored in `~/.skippr/credentials.json`.
@@ -24,7 +24,7 @@ Session tokens are stored in `~/.skippr/credentials.json`.
 Remove local credentials.
 
 ```bash
-skippr user logout
+sde user logout
 ```
 
 ### account
@@ -32,7 +32,7 @@ skippr user logout
 Check billed usage against the four Cloud meters (vCPU time, memory time, bytes stored, network bytes) and remaining prepaid funds.
 
 ```bash
-skippr user account
+sde user account
 ```
 
 ### buy-credits
@@ -40,25 +40,25 @@ skippr user account
 Add prepaid funds that pay those meters. Opens a Stripe checkout. This command does not sell credits, seats, or compute-unit packs.
 
 ```bash
-skippr user buy-credits --amount <DOLLARS>
+sde user buy-credits --amount <DOLLARS>
 ```
 
 **Examples:**
 
 ```bash
-skippr user buy-credits --amount 25     # add $25
-skippr user buy-credits --amount 100    # add $100
-skippr user buy-credits --amount 500    # add $500
+sde user buy-credits --amount 25     # add $25
+sde user buy-credits --amount 100    # add $100
+sde user buy-credits --amount 500    # add $500
 ```
 
-Minimum $5, maximum $10,000 per transaction. Usage and remaining funds are visible via `skippr user account`.
+Minimum $5, maximum $10,000 per transaction. Usage and remaining funds are visible via `sde user account`.
 
 ### create-api-key
 
 Create an API key for CI/CD or automation. Requires an active login.
 
 ```bash
-skippr user create-api-key --name "github-actions"
+sde user create-api-key --name "github-actions"
 ```
 
 The key (prefixed `sk_live_`) is shown once and can't be retrieved again. Set it as `SKIPPR_API_KEY` in your CI environment.
@@ -68,7 +68,7 @@ The key (prefixed `sk_live_`) is shown once and can't be retrieved again. Set it
 List all API keys on your account.
 
 ```bash
-skippr user list-api-keys
+sde user list-api-keys
 ```
 
 ### revoke-api-key
@@ -76,5 +76,5 @@ skippr user list-api-keys
 Revoke a key by ID (shown in `list-api-keys` output).
 
 ```bash
-skippr user revoke-api-key --key-id <id>
+sde user revoke-api-key --key-id <id>
 ```

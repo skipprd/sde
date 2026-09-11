@@ -17,4 +17,4 @@ Audience guides for Skippr Cloud ELT. Install the runner, connect sources, and p
 | Financial services | [Fintech](/elt/solutions/fintech) |
 | SaaS and startups | [SaaS and startups](/elt/solutions/saas-startups) |
 
-Partner program: [Partners](/partners). Product story: [ELT product](/elt/product/).
+Partner program: [Partners](/partners). Product story: [ELT product](/product/).

@@ -11,22 +11,22 @@ Skippr ELT writes to the warehouse or object store you already use. Ingest, mode
 
 | Warehouse | Connector |
 |-----------|-----------|
-| Snowflake | [Snowflake](/elt/connectors/destinations/snowflake) |
-| BigQuery | [BigQuery](/elt/connectors/destinations/bigquery) |
-| PostgreSQL | [PostgreSQL](/elt/connectors/destinations/postgres) |
-| Amazon Athena | [Athena](/elt/connectors/destinations/athena) |
-| Databricks | [Databricks](/elt/connectors/destinations/databricks) |
-| Azure Synapse | [Synapse](/elt/connectors/destinations/synapse) |
-| Amazon Redshift | [Redshift](/elt/connectors/destinations/redshift) |
-| ClickHouse | [ClickHouse](/elt/connectors/destinations/clickhouse) |
-| MotherDuck | [MotherDuck](/elt/connectors/destinations/motherduck) |
-| GCS / Azure Blob / SFTP | [GCS](/elt/connectors/destinations/gcs), [Azure Blob](/elt/connectors/destinations/azure-blob), [SFTP](/elt/connectors/destinations/sftp) |
+| Snowflake | [Snowflake](/connectors/destinations/snowflake) |
+| BigQuery | [BigQuery](/connectors/destinations/bigquery) |
+| PostgreSQL | [PostgreSQL](/connectors/destinations/postgres) |
+| Amazon Athena | [Athena](/connectors/destinations/athena) |
+| Databricks | [Databricks](/connectors/destinations/databricks) |
+| Azure Synapse | [Synapse](/connectors/destinations/synapse) |
+| Amazon Redshift | [Redshift](/connectors/destinations/redshift) |
+| ClickHouse | [ClickHouse](/connectors/destinations/clickhouse) |
+| MotherDuck | [MotherDuck](/connectors/destinations/motherduck) |
+| GCS / Azure Blob / SFTP | [GCS](/connectors/destinations/gcs), [Azure Blob](/connectors/destinations/azure-blob), [SFTP](/connectors/destinations/sftp) |
 
 Hub pages for warehouse-specific ELT walkthroughs: [ELT warehouses](/elt/warehouses/).
 
 ## Related
 
-- [Destinations overview](/elt/connectors/destinations/)
-- [Quick start: Snowflake](/elt/getting-started/quickstart-snowflake)
-- [Quick start: PostgreSQL](/elt/getting-started/quickstart-postgres)
-- [Quick start: BigQuery](/elt/getting-started/quickstart-bigquery)
+- [Destinations overview](/connectors/destinations/)
+- [Quick start: Snowflake](/getting-started/quickstart-snowflake)
+- [Quick start: PostgreSQL](/getting-started/quickstart-postgres)
+- [Quick start: BigQuery](/getting-started/quickstart-bigquery)

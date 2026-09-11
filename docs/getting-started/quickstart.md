@@ -3,12 +3,12 @@ description: "Get a Skippr pipeline running in minutes: init, connect warehouse 
 ---
 # Quick Start
 
-Get a working pipeline with materialised dbt models in under 5 minutes. Every guide follows the same pattern: `skippr init` a project, `skippr connect` your warehouse and source, run `skippr doctor` to check everything, then `skippr sync --pipeline <name> --once` to load bronze data and `skippr model` to generate and validate dbt assets.
+Get a working pipeline with materialised dbt models in under 5 minutes. Every guide follows the same pattern: `sde init` a project, `sde connect` your warehouse and source, run `sde doctor` to check everything, then `sde sync --pipeline <name> --once` to load bronze data and `sde model` to generate and validate dbt assets.
 
 If you need to reset one pipeline's Skippr state during testing, use:
 
 ```bash
-skippr reset --pipeline <name>
+sde reset --pipeline <name>
 ```
 
 That clears Skippr-owned runtime and modeling state for the selected pipeline while preserving your `skippr.yml`, source data, warehouse data, and schema sink resources.
@@ -25,7 +25,7 @@ That clears Skippr-owned runtime and modeling state for the selected pipeline wh
 
 ## All supported warehouses
 
-Skippr supports nine warehouse destinations. The CLI workflow is identical for every one -- only the `skippr connect warehouse` command changes.
+Skippr supports nine warehouse destinations. The CLI workflow is identical for every one -- only the `sde connect warehouse` command changes.
 
 | Warehouse | Connector docs |
 |---|---|

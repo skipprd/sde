@@ -1,7 +1,7 @@
 ---
-description: "Generate, validate, and publish dbt with skippr model. Turns bronze warehouse tables into silver/gold models you can review, test, and own."
+description: "Generate, validate, and publish dbt with sde model. Turns bronze warehouse tables into silver/gold models you can review, test, and own."
 ---
-# skippr model
+# sde model
 
 Model runs the data-engineer workflow for dbt planning, authoring, validation, review, and publish steps.
 
@@ -11,7 +11,7 @@ Model runs the data-engineer workflow for dbt planning, authoring, validation, r
 skippr [--config <path>] [--log [level]] model --pipeline <name> [--no-resume]
 ```
 
-`model` compiles the pipeline's `data_sink` from `data_sinks` plus built-in defaults for catalog, dbt, vector, storage, and LLM settings. Extract and load are handled by `skippr discover --pipeline <name>` and `skippr sync --pipeline <name>`, not by the modeling workflow.
+`model` compiles the pipeline's `data_sink` from `data_sinks` plus built-in defaults for catalog, dbt, vector, storage, and LLM settings. Extract and load are handled by `sde discover --pipeline <name>` and `sde sync --pipeline <name>`, not by the modeling workflow.
 
 ## Flags
 
@@ -31,9 +31,9 @@ Global flags:
 | `--log debug` | Debug-level logs |
 | `--log trace` | Maximum verbosity |
 
-By default, `skippr model --pipeline <name>` resumes the latest thread for that pipeline when one exists. That makes retries idempotent and lets a run continue from persisted modeling state. Add `--no-resume` only when you want to discard that thread selection and start a new model run.
+By default, `sde model --pipeline <name>` resumes the latest thread for that pipeline when one exists. That makes retries idempotent and lets a run continue from persisted modeling state. Add `--no-resume` only when you want to discard that thread selection and start a new model run.
 
 ## See also
 
-- [`skippr test`](/elt/cli/test) — list and run dbt tests against the materialised project.
-- [`skippr plan`](/elt/cli/plan) / [`skippr ask`](/elt/cli/ask) — planning and read-only Q&A without applying model changes.
+- [`sde test`](/cli/test) — list and run dbt tests against the materialised project.
+- [`sde plan`](/cli/plan) / [`sde ask`](/cli/ask) — planning and read-only Q&A without applying model changes.

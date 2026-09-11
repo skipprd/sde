@@ -1,9 +1,9 @@
 ---
-description: "How Skippr ELT works: discover source schemas, skippr sync bronze into your warehouse, then skippr model to draft, validate, and publish dbt."
+description: "How Skippr ELT works: discover source schemas, sde sync bronze into your warehouse, then sde model to draft, validate, and publish dbt."
 ---
 # How It Works
 
-The CLI moves through a short public pipeline model: discover the source, sync raw data, draft dbt assets, and validate the result. `skippr sync` handles extract/load; `skippr model` runs the data-engineer workflow that plans, authors, validates, and reviews the dbt project.
+The CLI moves through a short public pipeline model: discover the source, sync raw data, draft dbt assets, and validate the result. `sde sync` handles extract/load; `sde model` runs the data-engineer workflow that plans, authors, validates, and reviews the dbt project.
 
 ## The pipeline
 
@@ -33,21 +33,21 @@ Silver and Gold Models
 
 | Public step | What runs |
 |---|---|
-| **Discover** | `skippr discover` (internal `Discover`) |
-| **Sync** | `skippr sync` (internal `Sync`, `Verify`) |
-| **Model** | `skippr model` (internal phases such as `Plan`, `Author`, **`Validate`**, **`Review`** — these are part of the model run, not a separate CLI) |
-| **dbt tests** | [`skippr test`](/elt/cli/test) only — e.g. `skippr test list`, `skippr test run`. **Not** `skippr validate` (that command does not exist). |
+| **Discover** | `sde discover` (internal `Discover`) |
+| **Sync** | `sde sync` (internal `Sync`, `Verify`) |
+| **Model** | `sde model` (internal phases such as `Plan`, `Author`, **`Validate`**, **`Review`** — these are part of the model run, not a separate CLI) |
+| **dbt tests** | [`sde test`](/cli/test) only — e.g. `sde test list`, `sde test run`. **Not** `skippr validate` (that command does not exist). |
 
 ## What happens at each step
 
 1. **Discover** -- reads source metadata such as table names, column names, and types. Destination mapping is determined here, using deterministic logic rather than model output.
-2. **Sync** -- extracts rows and files from the source and writes them into bronze tables in your destination. API sources can declare [how each table lands](/elt/advanced/source-landing-semantics) (for example replace-by-date for mutable reports).
+2. **Sync** -- extracts rows and files from the source and writes them into bronze tables in your destination. API sources can declare [how each table lands](/advanced/source-landing-semantics) (for example replace-by-date for mutable reports).
 3. **Model** -- drafts a dbt project with source definitions, staging models, and business-facing models for review.
-4. **Checks and tests** -- While `skippr model` runs, the workflow already compiles and validates models against the destination (those are **internal** steps, not a `skippr validate` command). When you want **dbt tests** as a separate step — for example in CI after a model run — use [`skippr test run`](/elt/cli/test) (see [`skippr test`](/elt/cli/test)).
+4. **Checks and tests** -- While `sde model` runs, the workflow already compiles and validates models against the destination (those are **internal** steps, not a `skippr validate` command). When you want **dbt tests** as a separate step — for example in CI after a model run — use [`sde test run`](/cli/test) (see [`sde test`](/cli/test)).
 
 ## Incremental by default
 
-Re-running `skippr sync` on an existing project doesn't start from scratch:
+Re-running `sde sync` on an existing project doesn't start from scratch:
 
 - **Data sync** -- offsets are tracked internally. Only new and changed rows are extracted and loaded.
 - **dbt models** -- existing models are preserved. The agent updates or adds new models as the source evolves.
@@ -56,7 +56,7 @@ This means you can run the same pipeline on a schedule and it behaves like a pro
 
 ## Resumable modeling
 
-By default, `skippr model --pipeline <name>` resumes the latest modeling thread for the current pipeline when one exists. Use `skippr model --pipeline <name> --no-resume` to start a fresh thread, for example after changing the source shape significantly or when you want to ignore stale run state.
+By default, `sde model --pipeline <name>` resumes the latest modeling thread for the current pipeline when one exists. Use `sde model --pipeline <name> --no-resume` to start a fresh thread, for example after changing the source shape significantly or when you want to ignore stale run state.
 
 ## Data privacy
 

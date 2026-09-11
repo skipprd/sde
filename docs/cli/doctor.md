@@ -1,14 +1,14 @@
 ---
-description: "Run skippr doctor before sync or model: checks skippr.yml, warehouse and source credentials, binaries, and connectivity so failures show up early."
+description: "Run sde doctor before sync or model: checks skippr.yml, warehouse and source credentials, binaries, and connectivity so failures show up early."
 ---
-# skippr doctor
+# sde doctor
 
 A pre-flight check that verifies everything is wired up correctly before you run the pipeline. Run it whenever something doesn't look right -- it checks config, credentials, binaries, and connectivity.
 
 ## Usage
 
 ```bash
-skippr doctor
+sde doctor
 ```
 
 ## Checks performed
@@ -20,7 +20,7 @@ skippr doctor
 | Source | A source is configured via `connect source` |
 | `dbt` binary | The `dbt` CLI is on PATH (Python venv must be active) |
 | Python | `python3` or `python` is on PATH |
-| Authentication | Logged in via `skippr user login` or `SKIPPR_API_KEY` is set |
+| Authentication | Logged in via `sde user login` or `SKIPPR_API_KEY` is set |
 | `LLM_API_KEY` | Whether a custom LLM key is set (informational -- the server provides one automatically) |
 | Warehouse auth | Provider-specific credential checks (e.g. Snowflake account, key-pair auth) |
 
@@ -38,7 +38,7 @@ skippr doctor
   [ok]   SNOWFLAKE_USER is set
   [ok]   SNOWFLAKE_PRIVATE_KEY_PATH is set (key-pair auth)
 
-All checks passed. Run 'skippr sync --pipeline <name> --once', then 'skippr model --pipeline <name>'.
+All checks passed. Run 'sde sync --pipeline <name> --once', then 'sde model --pipeline <name>'.
 ```
 
 ## Exit codes

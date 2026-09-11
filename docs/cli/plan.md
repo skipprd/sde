@@ -1,9 +1,9 @@
 ---
-description: "Preview a data-engineering plan with skippr plan. Same hosted agent as model, but no warehouse writes—use it for review gates and CI."
+description: "Preview a data-engineering plan with sde plan. Same hosted agent as model, but no warehouse writes—use it for review gates and CI."
 ---
-# skippr plan
+# sde plan
 
-`skippr plan` produces a **data-engineering plan** for the configured pipeline **without** applying model changes. It uses the same hosted agent context as `skippr model`, but stops at planning-style output suitable for review or automation gates.
+`sde plan` produces a **data-engineering plan** for the configured pipeline **without** applying model changes. It uses the same hosted agent context as `sde model`, but stops at planning-style output suitable for review or automation gates.
 
 ## Usage
 
@@ -24,9 +24,9 @@ Global flags: `--config`, `--log`.
 
 ## Prerequisites
 
-Same as [`skippr ask`](/elt/cli/ask) and [`skippr model`](/elt/cli/model): valid `skippr.yml`, authentication, and prepaid funds for Cloud-backed LLM usage (billed as vCPU time, memory time, bytes stored, and network bytes).
+Same as [`sde ask`](/cli/ask) and [`sde model`](/cli/model): valid `skippr.yml`, authentication, and prepaid funds for Cloud-backed LLM usage (billed as vCPU time, memory time, bytes stored, and network bytes).
 
 ## See also
 
-- [`skippr ask`](/elt/cli/ask) — read-only Q&A.
-- [`skippr model`](/elt/cli/model) — apply the full modeling workflow.
+- [`sde ask`](/cli/ask) — read-only Q&A.
+- [`sde model`](/cli/model) — apply the full modeling workflow.

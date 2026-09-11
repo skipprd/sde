@@ -47,7 +47,7 @@ Verify the install:
 skippr --version
 ```
 
-The same binary also calls Skippr Cloud. After `skippr login --email you@example.com`, run Cloud commands such as `skippr tables list-tables`. See [CLI and SDKs](/cloud/cli). ELT account login stays `skippr user login`.
+The same binary also calls Skippr Cloud. After `skippr login --email you@example.com`, run Cloud commands such as `skippr tables list-tables`. See [CLI and SDKs](/cloud/cli). ELT account login stays `sde user login`.
 
 ## Install OpenSSL (Windows only)
 
@@ -120,7 +120,7 @@ Verify with `dbt --version`. The virtual environment must be active whenever you
 Log in or create a new Skippr account (same command for both):
 
 ```bash
-skippr user login
+sde user login
 ```
 
 For CI/CD, set an API key instead:

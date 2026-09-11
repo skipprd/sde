@@ -1,14 +1,14 @@
 ---
-description: "Create a Skippr project with skippr init: skippr.yml, .env.example, and the next steps to connect a source and warehouse, then sync and model."
+description: "Create a Skippr project with sde init: skippr.yml, .env.example, and the next steps to connect a source and warehouse, then sync and model."
 ---
-# skippr init
+# sde init
 
 Create a new project. This is always the first step -- it sets up the config file and tells you exactly what to do next.
 
 ## Usage
 
 ```bash
-skippr init <project-name>
+sde init <project-name>
 ```
 
 ## What it creates
@@ -27,7 +27,7 @@ skippr init <project-name>
 
 ```bash
 mkdir my-workspace && cd my-workspace
-skippr init mssql-migration
+sde init mssql-migration
 ```
 
 Output:
@@ -36,15 +36,15 @@ Output:
 Initialised project 'mssql-migration' in /Users/me/my-workspace
 
 Next steps:
-  skippr connect warehouse snowflake
-  skippr connect source mssql
-  skippr doctor
-  skippr sync --pipeline mssql-migration --once
-  skippr model --pipeline mssql-migration
+  sde connect warehouse snowflake
+  sde connect source mssql
+  sde doctor
+  sde sync --pipeline mssql-migration --once
+  sde model --pipeline mssql-migration
 ```
 
 ## Notes
 
 - Running `init` in a directory that already has `skippr.yml` is idempotent. It will print that the project is already initialised and leave the existing files alone.
-- Use [`skippr reset --pipeline <name>`](reset.md) if you want to clear Skippr-owned runtime and modeling state for a configured pipeline.
+- Use [`sde reset --pipeline <name>`](reset.md) if you want to clear Skippr-owned runtime and modeling state for a configured pipeline.
 - The project name should be a valid identifier (letters, numbers, underscores). It's used to name your warehouse schemas.

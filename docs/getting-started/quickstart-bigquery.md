@@ -9,7 +9,7 @@ Six commands to go from files in S3 to materialised dbt models in BigQuery -- br
 
 - `skippr` on PATH ([Install](install.md))
 - Python venv with `dbt-core` and `dbt-bigquery`
-- Authenticated via `skippr user login` (or `SKIPPR_API_KEY` for CI)
+- Authenticated via `sde user login` (or `SKIPPR_API_KEY` for CI)
 - BigQuery and AWS credentials in your environment:
 
 ```bash
@@ -25,30 +25,30 @@ Need help with credentials? See [BigQuery](../connectors/destinations/bigquery.m
 ```bash
 # 1. Create the project
 mkdir my-workspace && cd my-workspace
-skippr init s3-analytics
+sde init s3-analytics
 
 # 2. Point at your warehouse
-skippr connect warehouse bigquery \
+sde connect warehouse bigquery \
   --project my-gcp-project \
   --dataset raw_data \
   --location US
 
 # 3. Point at your source
-skippr connect source s3 \
+sde connect source s3 \
   --s3-bucket my-data-bucket \
   --s3-prefix raw/
 
 # 4. Verify everything is wired up
-skippr doctor
+sde doctor
 
 # 5. Load bronze data
-skippr sync --pipeline s3-analytics --once
+sde sync --pipeline s3-analytics --once
 
 # 6. Generate and validate dbt models
-skippr model --pipeline s3-analytics
+sde model --pipeline s3-analytics
 ```
 
-That's it. `skippr sync --pipeline s3-analytics --once` discovers file schemas when needed and loads data into BigQuery; `skippr model --pipeline s3-analytics` then generates a complete dbt project with silver and gold models -- compiled and materialised.
+That's it. `sde sync --pipeline s3-analytics --once` discovers file schemas when needed and loads data into BigQuery; `sde model --pipeline s3-analytics` then generates a complete dbt project with silver and gold models -- compiled and materialised.
 
 ## What you get
 
@@ -102,7 +102,7 @@ data_sinks:
 
 ## What's next
 
-- Run `skippr sync --pipeline s3-analytics --once` again -- it is incremental, only new and changed rows are synced.
-- Re-run `skippr model --pipeline s3-analytics` to resume the latest modeling thread. Use `skippr model --pipeline s3-analytics --no-resume` when you want a clean modeling attempt.
+- Run `sde sync --pipeline s3-analytics --once` again -- it is incremental, only new and changed rows are synced.
+- Re-run `sde model --pipeline s3-analytics` to resume the latest modeling thread. Use `sde model --pipeline s3-analytics --no-resume` when you want a clean modeling attempt.
 - The dbt project is yours. Add tests, snapshots, or custom gold models.
 - See [How It Works](how-it-works.md) for the full pipeline breakdown.

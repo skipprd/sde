@@ -7,7 +7,7 @@ description: "Consolidate transactions and reporting with Skippr ELT. Exactly-on
 
 Consolidate transactions, strengthen controls, and ship reporting pipelines with Skippr Cloud ELT. Exactly-once delivery, streaming sources, and a runner you operate.
 
-See [ELT product](/elt/product/) and [Install](/elt/getting-started/install).
+See [ELT product](/product/) and [Install](/getting-started/install).
 
 ## The data problem
 
@@ -19,23 +19,23 @@ See [ELT product](/elt/product/) and [Install](/elt/getting-started/install).
 
 ## How Skippr Cloud ELT helps
 
-- WAL-backed exactly-once delivery for reconciliation. See [Features](/elt/product/features).
-- Stream events into the warehouse. See [CDC](/elt/product/cdc) and [CDC overview](/elt/cdc/overview).
-- Generate documented dbt marts for reporting. See [Data modeling](/elt/product/data-modeling).
+- WAL-backed exactly-once delivery for reconciliation. See [Features](/product/features).
+- Stream events into the warehouse. See [CDC](/product/cdc) and [CDC overview](/cdc/overview).
+- Generate documented dbt marts for reporting. See [Data modeling](/product/data-modeling).
 
 ## Sources teams use
 
-- [PostgreSQL](/elt/connectors/sources/postgres) — hub: [PostgreSQL](/elt/sources/postgres)
-- [MSSQL](/elt/connectors/sources/mssql) — hub: [MSSQL](/elt/sources/mssql)
-- [Kafka](/elt/connectors/sources/kafka) — hub: [Kafka](/elt/sources/kafka)
-- [DynamoDB](/elt/connectors/sources/dynamodb) — hub: [DynamoDB](/elt/sources/dynamodb)
-- [S3](/elt/connectors/sources/s3) — hub: [S3](/elt/sources/s3)
+- [PostgreSQL](/connectors/sources/postgres) — hub: [PostgreSQL](/sources/postgres)
+- [MSSQL](/connectors/sources/mssql) — hub: [MSSQL](/sources/mssql)
+- [Kafka](/connectors/sources/kafka) — hub: [Kafka](/sources/kafka)
+- [DynamoDB](/connectors/sources/dynamodb) — hub: [DynamoDB](/sources/dynamodb)
+- [S3](/connectors/sources/s3) — hub: [S3](/sources/s3)
 
 ## Warehouses
 
-- [Snowflake](/elt/connectors/destinations/snowflake) — hub: [Snowflake](/elt/warehouses/snowflake)
-- [BigQuery](/elt/connectors/destinations/bigquery) — hub: [BigQuery](/elt/warehouses/bigquery)
-- [Databricks](/elt/connectors/destinations/databricks) — hub: [Databricks](/elt/warehouses/databricks)
+- [Snowflake](/connectors/destinations/snowflake) — hub: [Snowflake](/elt/warehouses/snowflake)
+- [BigQuery](/connectors/destinations/bigquery) — hub: [BigQuery](/elt/warehouses/bigquery)
+- [Databricks](/connectors/destinations/databricks) — hub: [Databricks](/elt/warehouses/databricks)
 
 ## Compliance
 
@@ -45,6 +45,6 @@ See [ELT product](/elt/product/) and [Install](/elt/getting-started/install).
 
 ## Next
 
-- [Install](/elt/getting-started/install)
+- [Install](/getting-started/install)
 - [Contact](/contact)
 - [ELT solutions](/elt/solutions/)

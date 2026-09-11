@@ -7,7 +7,7 @@ description: "Stand up Skippr ELT without a data team: ingest product databases 
 
 Go from product databases and events to a warehouse layer without hiring a dedicated data team. Skippr Cloud ELT ingests, cleanses, and generates reviewable dbt.
 
-See [ELT product](/elt/product/) and [Install](/elt/getting-started/install).
+See [ELT product](/product/) and [Install](/getting-started/install).
 
 ## The data problem
 
@@ -19,23 +19,23 @@ See [ELT product](/elt/product/) and [Install](/elt/getting-started/install).
 
 ## How Skippr Cloud ELT helps
 
-- Stand up ingestion, cleansing, and modeled tables in one session. See [Quick start](/elt/getting-started/quickstart).
-- Generate bronze, silver, and gold dbt you can review. See [Data modeling](/elt/product/data-modeling).
-- Run the binary where the data already is. See [Install](/elt/getting-started/install).
+- Stand up ingestion, cleansing, and modeled tables in one session. See [Quick start](/getting-started/quickstart).
+- Generate bronze, silver, and gold dbt you can review. See [Data modeling](/product/data-modeling).
+- Run the binary where the data already is. See [Install](/getting-started/install).
 
 ## Sources teams use
 
-- [PostgreSQL](/elt/connectors/sources/postgres) — hub: [PostgreSQL](/elt/sources/postgres)
-- [MySQL](/elt/connectors/sources/mysql) — hub: [MySQL](/elt/sources/mysql)
-- [MongoDB](/elt/connectors/sources/mongodb) — hub: [MongoDB](/elt/sources/mongodb)
-- [S3](/elt/connectors/sources/s3) (event logs) — hub: [S3](/elt/sources/s3)
-- [Kafka](/elt/connectors/sources/kafka) — hub: [Kafka](/elt/sources/kafka)
+- [PostgreSQL](/connectors/sources/postgres) — hub: [PostgreSQL](/sources/postgres)
+- [MySQL](/connectors/sources/mysql) — hub: [MySQL](/sources/mysql)
+- [MongoDB](/connectors/sources/mongodb) — hub: [MongoDB](/sources/mongodb)
+- [S3](/connectors/sources/s3) (event logs) — hub: [S3](/sources/s3)
+- [Kafka](/connectors/sources/kafka) — hub: [Kafka](/sources/kafka)
 
 ## Warehouses
 
-- [BigQuery](/elt/connectors/destinations/bigquery) — hub: [BigQuery](/elt/warehouses/bigquery)
-- [Snowflake](/elt/connectors/destinations/snowflake) — hub: [Snowflake](/elt/warehouses/snowflake)
-- [MotherDuck](/elt/connectors/destinations/motherduck) — hub: [MotherDuck](/elt/warehouses/motherduck)
+- [BigQuery](/connectors/destinations/bigquery) — hub: [BigQuery](/elt/warehouses/bigquery)
+- [Snowflake](/connectors/destinations/snowflake) — hub: [Snowflake](/elt/warehouses/snowflake)
+- [MotherDuck](/connectors/destinations/motherduck) — hub: [MotherDuck](/elt/warehouses/motherduck)
 
 ## Trust
 
@@ -44,6 +44,6 @@ See [ELT product](/elt/product/) and [Install](/elt/getting-started/install).
 
 ## Next
 
-- [Install](/elt/getting-started/install)
+- [Install](/getting-started/install)
 - [Contact](/contact)
 - [ELT solutions](/elt/solutions/)

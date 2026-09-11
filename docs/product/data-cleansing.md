@@ -24,5 +24,5 @@ Only truncated JSON, binary garbage, or irrecoverable encoding is quarantined. D
 
 ## Related
 
-- [Schema discovery](/elt/product/schema-discovery)
+- [Schema discovery](/product/schema-discovery)
 - [Troubleshooting](/elt/operations/troubleshooting)

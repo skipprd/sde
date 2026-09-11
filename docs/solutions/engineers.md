@@ -5,7 +5,7 @@ description: "Skippr for data engineers: one Rust binary, WAL-backed exactly-onc
 
 # ELT for engineers
 
-Skippr Cloud ELT is a compiled runner: WAL-backed exactly-once delivery, deterministic schema discovery, Apache Arrow in memory. Ingest does not require Python, a JVM, or a cluster. Modeling uses generated dbt (Python + adapter on the machine that runs `skippr model`).
+Skippr Cloud ELT is a compiled runner: WAL-backed exactly-once delivery, deterministic schema discovery, Apache Arrow in memory. Ingest does not require Python, a JVM, or a cluster. Modeling uses generated dbt (Python + adapter on the machine that runs `sde model`).
 
 ## Under the hood
 
@@ -42,12 +42,12 @@ Only unparseable records are quarantined (truncated JSON, binary garbage). Dead 
 | Type mapping | Per-source, per-sink code | Deterministic, per-sink |
 | Crash recovery | Custom checkpoints | WAL-backed |
 | Data quality | Separate test suite | Dead letters |
-| dbt bootstrapping | Hand-written SQL | [`skippr model`](/elt/cli/model) |
+| dbt bootstrapping | Hand-written SQL | [`sde model`](/cli/model) |
 | Orchestration | Airflow / Dagster | Single process for the default path |
 | Infrastructure | Kubernetes | One binary |
 
 ## Related
 
-- [ELT product](/elt/product/)
+- [ELT product](/product/)
 - [Vision](/elt/vision)
-- [Install](/elt/getting-started/install)
+- [Install](/getting-started/install)

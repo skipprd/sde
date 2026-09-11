@@ -1,16 +1,16 @@
 ---
-description: "List and run dbt tests with skippr test against the same generated project skippr model publishes. Validate models in CI without re-running the agent."
+description: "List and run dbt tests with sde test against the same generated project sde model publishes. Validate models in CI without re-running the agent."
 ---
-# skippr test
+# sde test
 
-`skippr test` lists and runs [dbt tests](https://docs.getdbt.com/docs/build/tests) against the same generated dbt project materialised from cloud storage as `skippr model`. Use it after modeling to validate models in CI or locally without re-running the full data-engineer agent loop.
+`sde test` lists and runs [dbt tests](https://docs.getdbt.com/docs/build/tests) against the same generated dbt project materialised from cloud storage as `sde model`. Use it after modeling to validate models in CI or locally without re-running the full data-engineer agent loop.
 
 ## Subcommands
 
 | Subcommand | Purpose |
 |---|---|
-| `skippr test list` | Print discovered dbt tests (from the manifest) as JSON or text. |
-| `skippr test run` | Run `dbt test` and stream structured results (`jsonl` by default). |
+| `sde test list` | Print discovered dbt tests (from the manifest) as JSON or text. |
+| `sde test run` | Run `dbt test` and stream structured results (`jsonl` by default). |
 
 ## Usage
 
@@ -46,7 +46,7 @@ skippr [--config <path>] [--log [level]] test run --pipeline <name> [--select <e
 | `--output json` | Aggregate JSON where supported. |
 | `--output text` | Plain text. |
 
-Global flags match other engine commands (`--config`, `--log`). Authentication and hosted storage behave like [`skippr model`](/elt/cli/model): use `skippr user login`, stored credentials, or `SKIPPR_API_KEY` for CI.
+Global flags match other engine commands (`--config`, `--log`). Authentication and hosted storage behave like [`sde model`](/cli/model): use `sde user login`, stored credentials, or `SKIPPR_API_KEY` for CI.
 
 ## Prerequisites
 
@@ -55,5 +55,5 @@ Global flags match other engine commands (`--config`, `--log`). Authentication a
 
 ## See also
 
-- [`skippr model`](/elt/cli/model) — generate and validate the dbt project first.
-- [`skippr discover`](/elt/cli/discover) / [`skippr sync`](/elt/cli/sync) — load bronze data before tests that depend on warehouse state.
+- [`sde model`](/cli/model) — generate and validate the dbt project first.
+- [`sde discover`](/cli/discover) / [`sde sync`](/cli/sync) — load bronze data before tests that depend on warehouse state.

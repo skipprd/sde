@@ -13,10 +13,10 @@ Core capabilities in one Rust runner. No cluster and no separate orchestrator fo
 | Schema evolution | New columns and type-change columns; existing data is not rewritten. |
 | Dead letter handling | Unparseable records quarantined as queryable Parquet. Never silently dropped. |
 | Crash recovery | Resume from the last committed offset. |
-| Connector ecosystem | 25+ sources. See [Sources](/elt/connectors/sources/). |
-| Built-in SQL | Query tables and WAL via the runner SQL surface. See [CLI](/elt/cli/init). |
+| Connector ecosystem | 25+ sources. See [Sources](/connectors/sources/). |
+| Built-in SQL | Query tables and WAL via the runner SQL surface. See [CLI](/cli/init). |
 | Single Rust binary | One process. No Python runtime for ingest; dbt is used for generated models. |
-| Any warehouse | [Destinations](/elt/connectors/destinations/). |
+| Any warehouse | [Destinations](/connectors/destinations/). |
 | Privacy | Row-level data stays on the runner-to-destination path. AI modeling uses schema metadata by default. |
 | Pricing | Skippr Cloud meters: vCPU time, memory time, bytes stored, network bytes. No monthly seat or MAR pack. |
 | Autonomous repair | Common dbt validation failures are adjusted and re-run; you still review the SQL. |
@@ -25,7 +25,7 @@ Core capabilities in one Rust runner. No cluster and no separate orchestrator fo
 
 | Dimension | Skippr ELT | Manual ETL | Hiring a data engineer |
 |-----------|------------|------------|------------------------|
-| Setup | Minutes with [install](/elt/getting-started/install) | Days to weeks | Weeks of hiring plus onboarding |
+| Setup | Minutes with [install](/getting-started/install) | Days to weeks | Weeks of hiring plus onboarding |
 | Schema handling | Automatic evolution | Migration scripts | Manual |
 | Crash recovery | WAL-backed | Re-runs | Custom retry logic |
 | Data path | Runner to your warehouse | Depends on tooling | You build it |
@@ -33,5 +33,5 @@ Core capabilities in one Rust runner. No cluster and no separate orchestrator fo
 
 ## Related
 
-- [Core concepts](/elt/advanced/core-concepts)
-- [Exactly-once in CDC](/elt/cdc/guarantees)
+- [Core concepts](/advanced/core-concepts)
+- [Exactly-once in CDC](/cdc/guarantees)

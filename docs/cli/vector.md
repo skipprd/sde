@@ -1,9 +1,9 @@
 ---
-description: "Chunk, embed, and upsert docs into a tenant vector store with skippr vector ingest-docs. Separate from skippr model; used for retrieval over your files."
+description: "Chunk, embed, and upsert docs into a tenant vector store with sde vector ingest-docs. Separate from sde model; used for retrieval over your files."
 ---
-# skippr vector
+# sde vector
 
-The `skippr vector` command group handles **vector store** workflows that do **not** go through `skippr model`. Today the only subcommand is **`ingest-docs`**: walk declarative file sets from `skippr.yml`, chunk text, call the hosted embed API, and upsert vectors into **tenant** Lance storage on S3 (same keyspace layout as the data-engineer suite).
+The `sde vector` command group handles **vector store** workflows that do **not** go through `sde model`. Today the only subcommand is **`ingest-docs`**: walk declarative file sets from `skippr.yml`, chunk text, call the hosted embed API, and upsert vectors into **tenant** Lance storage on S3 (same keyspace layout as the data-engineer suite).
 
 Public read copies of those vectors (for example marketing-site knowledge) are a **separate** sync step from your tenant prefix to the public vectors bucket; that is typically done in CI with a dedicated publish role, not by this CLI command alone.
 
@@ -11,7 +11,7 @@ Public read copies of those vectors (for example marketing-site knowledge) are a
 
 | Subcommand | Purpose |
 |---|---|
-| `skippr vector ingest-docs` | Chunk, embed, and upsert documentation (or similar text files) into Lance under your tenant bucket. |
+| `sde vector ingest-docs` | Chunk, embed, and upsert documentation (or similar text files) into Lance under your tenant bucket. |
 
 ## Usage
 
@@ -58,19 +58,19 @@ Global flags: `--config`, `--log` (same as other commands).
 
 ## Authentication
 
-Same as [`skippr model`](/elt/cli/model): `skippr user login`, `SKIPPR_API_KEY` in CI, and `/auth/credentials` for tenant S3 + LLM. Optional API fields **`knowledge_credentials`** and **`public_vectors_bucket`** apply to **reading** published public vectors in apps, not to `ingest-docs` writes (ingest uses the primary tenant credentials).
+Same as [`sde model`](/cli/model): `sde user login`, `SKIPPR_API_KEY` in CI, and `/auth/credentials` for tenant S3 + LLM. Optional API fields **`knowledge_credentials`** and **`public_vectors_bucket`** apply to **reading** published public vectors in apps, not to `ingest-docs` writes (ingest uses the primary tenant credentials).
 
 ## GitHub Actions
 
 This repository ships **`.github/workflows/docs-vector-ingest.yml`**, which:
 
 1. Checks out the repo.
-2. Installs the CLI with the same public one-liner as [Install](/elt/getting-started/install): `curl -fsSL https://install.skippr.io/install.sh | sh`.
-3. Runs **`bash scripts/vector-ingest-docs.sh`** (which invokes `skippr vector ingest-docs` against `./skippr.yml`).
+2. Installs the CLI with the same public one-liner as [Install](/getting-started/install): `curl -fsSL https://install.skippr.io/install.sh | sh`.
+3. Runs **`bash scripts/vector-ingest-docs.sh`** (which invokes `sde vector ingest-docs` against `./skippr.yml`).
 
-Add a repository secret **`SKIPPR_API_KEY`** for an account that has already accepted the current EULA (interactive `skippr user login` once if needed). The workflow runs on **`workflow_dispatch`** and on pushes to **`main`** / **`master`** that touch `docs/`, `skippr.yml`, or the ingest script.
+Add a repository secret **`SKIPPR_API_KEY`** for an account that has already accepted the current EULA (interactive `sde user login` once if needed). The workflow runs on **`workflow_dispatch`** and on pushes to **`main`** / **`master`** that touch `docs/`, `skippr.yml`, or the ingest script.
 
 ## See also
 
-- [Config file](/elt/configuration/config-file) — `vector_sources` and doc-vector settings under `pipelines`.
-- [`skippr model`](/elt/cli/model) — warehouse-backed modeling (separate from doc vector ingest).
+- [Config file](/configuration/config-file) — `vector_sources` and doc-vector settings under `pipelines`.
+- [`sde model`](/cli/model) — warehouse-backed modeling (separate from doc vector ingest).

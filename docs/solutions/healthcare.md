@@ -7,7 +7,7 @@ description: "Unify clinical and operational data with self-hosted Skippr ELT. D
 
 Unify clinical and operational data with Skippr Cloud ELT. Run the runner in your environment, discover schemas from EHR databases, and land analytics-ready tables you own.
 
-See [ELT product](/elt/product/) and [Install](/elt/getting-started/install).
+See [ELT product](/product/) and [Install](/getting-started/install).
 
 ## The data problem
 
@@ -19,25 +19,25 @@ See [ELT product](/elt/product/) and [Install](/elt/getting-started/install).
 
 ## How Skippr Cloud ELT helps
 
-- Discover and evolve schemas from clinical databases without a separate documentation project. See [Schema discovery](/elt/product/schema-discovery).
-- Standardize records before they reach analytics layers. See [Data cleansing](/elt/product/data-cleansing).
-- Generate bronze, silver, and gold dbt for clinical analytics. See [Data modeling](/elt/product/data-modeling).
+- Discover and evolve schemas from clinical databases without a separate documentation project. See [Schema discovery](/product/schema-discovery).
+- Standardize records before they reach analytics layers. See [Data cleansing](/product/data-cleansing).
+- Generate bronze, silver, and gold dbt for clinical analytics. See [Data modeling](/product/data-modeling).
 
 Row-level source data moves from the machine running `skippr` to your destination. Authentication and control-plane services are Cloud-backed.
 
 ## Sources teams use
 
-- [MSSQL](/elt/connectors/sources/mssql) (Epic / Cerner patterns) — hub: [MSSQL](/elt/sources/mssql)
-- [PostgreSQL](/elt/connectors/sources/postgres) — hub: [PostgreSQL](/elt/sources/postgres)
-- [SFTP](/elt/connectors/sources/sftp) (HL7 / FHIR exports) — hub: [SFTP](/elt/sources/sftp)
-- [S3](/elt/connectors/sources/s3) — hub: [S3](/elt/sources/s3)
-- [MongoDB](/elt/connectors/sources/mongodb) — hub: [MongoDB](/elt/sources/mongodb)
+- [MSSQL](/connectors/sources/mssql) (Epic / Cerner patterns) — hub: [MSSQL](/sources/mssql)
+- [PostgreSQL](/connectors/sources/postgres) — hub: [PostgreSQL](/sources/postgres)
+- [SFTP](/connectors/sources/sftp) (HL7 / FHIR exports) — hub: [SFTP](/sources/sftp)
+- [S3](/connectors/sources/s3) — hub: [S3](/sources/s3)
+- [MongoDB](/connectors/sources/mongodb) — hub: [MongoDB](/sources/mongodb)
 
 ## Warehouses
 
-- [Snowflake](/elt/connectors/destinations/snowflake) — hub: [Snowflake](/elt/warehouses/snowflake)
-- [BigQuery](/elt/connectors/destinations/bigquery) — hub: [BigQuery](/elt/warehouses/bigquery)
-- [Redshift](/elt/connectors/destinations/redshift) — hub: [Redshift](/elt/warehouses/redshift)
+- [Snowflake](/connectors/destinations/snowflake) — hub: [Snowflake](/elt/warehouses/snowflake)
+- [BigQuery](/connectors/destinations/bigquery) — hub: [BigQuery](/elt/warehouses/bigquery)
+- [Redshift](/connectors/destinations/redshift) — hub: [Redshift](/elt/warehouses/redshift)
 
 ## Compliance
 
@@ -47,6 +47,6 @@ Row-level source data moves from the machine running `skippr` to your destinatio
 
 ## Next
 
-- [Install](/elt/getting-started/install)
+- [Install](/getting-started/install)
 - [Contact](/contact)
 - [ELT solutions](/elt/solutions/)

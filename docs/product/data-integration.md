@@ -5,11 +5,11 @@ description: "Connect databases, files, APIs, and streams, then load your wareho
 
 # Data integration
 
-`skippr sync` is the extract/load path in Skippr ELT. It connects to data where it lives and delivers it to your warehouse with exactly-once guarantees before modeling.
+`sde sync` is the extract/load path in Skippr ELT. It connects to data where it lives and delivers it to your warehouse with exactly-once guarantees before modeling.
 
 ## What you connect
 
-Sources include MSSQL, MySQL, Postgres, MongoDB, Redshift, ClickHouse, MotherDuck, Delta Lake, S3, Kafka, SQS, AMQP, MQTT, HTTP APIs, and more. Configuration is a `skippr.yml` (or environment variables), not application code. Full list: [Sources](/elt/connectors/sources/).
+Sources include MSSQL, MySQL, Postgres, MongoDB, Redshift, ClickHouse, MotherDuck, Delta Lake, S3, Kafka, SQS, AMQP, MQTT, HTTP APIs, and more. Configuration is a `skippr.yml` (or environment variables), not application code. Full list: [Sources](/connectors/sources/).
 
 Skippr connects directly to sources or reads from object storage. You do not install daemons on databases or app servers.
 
@@ -20,12 +20,12 @@ WAL-backed ingestion tracks offsets per record. The runner resumes after crashes
 ## Pipeline
 
 1. **Connect** — point Skippr at the source.
-2. **Discover** — sample and infer schema ([schema discovery](/elt/product/schema-discovery)).
+2. **Discover** — sample and infer schema ([schema discovery](/product/schema-discovery)).
 3. **Ingest** — WAL-backed offsets; compact to Parquet.
-4. **Deliver** — structured tables in your warehouse ([destinations](/elt/connectors/destinations/)).
+4. **Deliver** — structured tables in your warehouse ([destinations](/connectors/destinations/)).
 
 ## Related
 
-- [CDC](/elt/product/cdc) for change streams
-- [`skippr sync`](/elt/cli/sync)
-- [Install](/elt/getting-started/install)
+- [CDC](/product/cdc) for change streams
+- [`sde sync`](/cli/sync)
+- [Install](/getting-started/install)

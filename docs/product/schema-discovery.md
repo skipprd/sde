@@ -18,9 +18,9 @@ When schemas change, Skippr diffs and applies backward-compatible updates. New c
 3. **Diff** — compare against the previous run.
 4. **Apply** — additive evolution only.
 
-See [How it works](/elt/getting-started/how-it-works) and [Source landing semantics](/elt/advanced/source-landing-semantics).
+See [How it works](/getting-started/how-it-works) and [Source landing semantics](/advanced/source-landing-semantics).
 
 ## Related
 
-- [`skippr discover`](/elt/cli/discover)
-- [Data cleansing](/elt/product/data-cleansing)
+- [`sde discover`](/cli/discover)
+- [Data cleansing](/product/data-cleansing)
