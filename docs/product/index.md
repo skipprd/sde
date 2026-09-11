@@ -29,7 +29,7 @@ Skippr Cloud ELT is the extract, load, and model product on Skippr Cloud — a s
 3. **Sync** bronze data — [`sde sync`](/cli/sync).
 4. **Model** reviewable dbt — [`sde model`](/cli/model).
 
-Row-level source data moves from the machine running `skippr` to your destination. Authentication and control-plane services are Cloud-backed. Cloud-backed usage bills as **vCPU time**, **memory time**, **bytes stored**, and **network bytes** — the same four meters as other Cloud capabilities. There is no monthly seat, MAR pack, or named usage-threshold SKU. See [How it works](/getting-started/how-it-works) and [ELT features](/product/features).
+Row-level source data moves from the machine running `sde` to your destination. Authentication and control-plane services are Cloud-backed. Cloud-backed usage bills as **vCPU time**, **memory time**, **bytes stored**, and **network bytes** — the same four meters as other Cloud capabilities. There is no monthly seat, MAR pack, or named usage-threshold SKU. See [How it works](/getting-started/how-it-works) and [ELT features](/product/features).
 
 ## Related
 

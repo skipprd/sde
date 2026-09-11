@@ -11,7 +11,7 @@ Six commands to go from a SQL Server database to materialised dbt models in Snow
 
 ## Prerequisites
 
-- `skippr` on PATH ([Install](install.md) — includes Windows PowerShell one-liner)
+- `sde` on PATH ([Install](install.md) — includes Windows PowerShell one-liner)
 - Python venv with `dbt-core` and `dbt-snowflake`
 - OpenSSL installed for key-pair auth (pre-installed on macOS/Linux; Windows: `winget install OpenSSL`)
 - Authenticated via `sde user login` (or `SKIPPR_API_KEY` for CI)

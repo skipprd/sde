@@ -23,7 +23,7 @@ See [ELT product](/product/) and [Install](/getting-started/install).
 - Standardize records before they reach analytics layers. See [Data cleansing](/product/data-cleansing).
 - Generate bronze, silver, and gold dbt for clinical analytics. See [Data modeling](/product/data-modeling).
 
-Row-level source data moves from the machine running `skippr` to your destination. Authentication and control-plane services are Cloud-backed.
+Row-level source data moves from the machine running `sde` to your destination. Authentication and control-plane services are Cloud-backed.
 
 ## Sources teams use
 

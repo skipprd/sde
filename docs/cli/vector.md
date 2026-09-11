@@ -16,7 +16,7 @@ Public read copies of those vectors (for example marketing-site knowledge) are a
 ## Usage
 
 ```bash
-skippr [--config <path>] [--log [level]] vector ingest-docs \
+sde [--config <path>] [--log [level]] vector ingest-docs \
   [--pipeline <name>] \
   [--vector-source <key>] \
   [--src-path <dir>] \

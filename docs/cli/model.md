@@ -8,7 +8,7 @@ Model runs the data-engineer workflow for dbt planning, authoring, validation, r
 ## Usage
 
 ```bash
-skippr [--config <path>] [--log [level]] model --pipeline <name> [--no-resume]
+sde [--config <path>] [--log [level]] model --pipeline <name> [--no-resume]
 ```
 
 `model` compiles the pipeline's `data_sink` from `data_sinks` plus built-in defaults for catalog, dbt, vector, storage, and LLM settings. Extract and load are handled by `sde discover --pipeline <name>` and `sde sync --pipeline <name>`, not by the modeling workflow.

@@ -8,7 +8,7 @@ description: "Preview a data-engineering plan with sde plan. Same hosted agent a
 ## Usage
 
 ```bash
-skippr [--config <path>] [--log [level]] plan --pipeline <name> [--goal "<text>"] [--output text|json|jsonl]
+sde [--config <path>] [--log [level]] plan --pipeline <name> [--goal "<text>"] [--output text|json|jsonl]
 ```
 
 ## Flags

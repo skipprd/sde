@@ -7,7 +7,7 @@ Six commands to go from files in S3 to materialised dbt models in BigQuery -- br
 
 ## Prerequisites
 
-- `skippr` on PATH ([Install](install.md))
+- `sde` on PATH ([Install](install.md))
 - Python venv with `dbt-core` and `dbt-bigquery`
 - Authenticated via `sde user login` (or `SKIPPR_API_KEY` for CI)
 - BigQuery and AWS credentials in your environment:

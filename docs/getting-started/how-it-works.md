@@ -36,7 +36,7 @@ Silver and Gold Models
 | **Discover** | `sde discover` (internal `Discover`) |
 | **Sync** | `sde sync` (internal `Sync`, `Verify`) |
 | **Model** | `sde model` (internal phases such as `Plan`, `Author`, **`Validate`**, **`Review`** — these are part of the model run, not a separate CLI) |
-| **dbt tests** | [`sde test`](/cli/test) only — e.g. `sde test list`, `sde test run`. **Not** `skippr validate` (that command does not exist). |
+| **dbt tests** | [`sde test`](/cli/test) only — e.g. `sde test list`, `sde test run`. **Not** `sde validate` (that command does not exist). |
 
 ## What happens at each step
 
@@ -60,7 +60,7 @@ By default, `sde model --pipeline <name>` resumes the latest modeling thread for
 
 ## Data privacy
 
-Row-level data only ever exists in two places: the machine running `skippr`, and your warehouse.
+Row-level data only ever exists in two places: the machine running `sde`, and your warehouse.
 
 - **Source data** is read locally and written directly to the warehouse API (Snowflake REST, BigQuery API, Postgres wire protocol, etc.). It is never sent to Skippr or any third party.
 - **AI modeling** uses only metadata (table names, column names, types) by default. Data samples can optionally be sent to improve model quality but are off by default.

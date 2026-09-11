@@ -8,7 +8,7 @@ description: "Ask a read-only data-engineering question about a Skippr pipeline.
 ## Usage
 
 ```bash
-skippr [--config <path>] [--log [level]] ask --pipeline <name> --question "<text>" [--output text|json|jsonl]
+sde [--config <path>] [--log [level]] ask --pipeline <name> --question "<text>" [--output text|json|jsonl]
 ```
 
 ## Flags

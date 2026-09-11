@@ -1,53 +1,35 @@
 ---
-title: "Skippr CLI"
-description: "Install the Skippr CLI on macOS, Linux, or Windows (curl or PowerShell). The same binary calls Skippr Cloud and runs Production ELT into reviewable dbt."
+title: "Install sde"
+description: "Install Skippr Data Engineer (sde) and skipprd. sde is not the Cloud skippr CLI."
 ---
-# Skippr CLI
 
-Install the CLI first. Then add Python and dbt so Skippr can generate and validate standard dbt output. The same binary also calls Skippr Cloud services after `skippr login`.
+# Install sde
 
-## Install skippr
+Skippr Data Engineer is the **`sde`** binary. It is not Cloud `skippr`. Discover and sync invoke **`skipprd`** on PATH.
 
-By downloading or installing Skippr, you accept the [Skippr EULA](/terms/eula).
+## Install sde and skipprd
 
-### macOS / Linux
+By downloading or installing Skippr Data Engineer, you accept the [Skippr EULA](https://skippr.io/terms/eula).
 
-```bash
-curl -fsSL https://install.skippr.io/install.sh | sh
-```
-
-This detects your platform, downloads the latest release, and installs `skippr` to `/usr/local/bin`.
-
-### Windows
-
-Run the following in **PowerShell** (the default terminal in VS Code on Windows):
-
-```powershell
-irm https://install.skippr.io/install.ps1 | iex
-```
-
-This downloads the latest release, installs `skippr.exe` to `%LOCALAPPDATA%\skippr\bin`, and adds it to your user `PATH` — so you can run `skippr` from any terminal without needing `.\skippr.exe`.
-
-To use `skippr` immediately in the current session, restart your terminal or open a new one.
-
-::: tip cmd.exe users
-From a standard Command Prompt you can invoke the same installer:
-```cmd
-powershell -c "irm https://install.skippr.io/install.ps1 | iex"
-```
-:::
-
-### Manual install (any platform)
-
-Download the binary for your platform from `https://install.skippr.io/releases/skippr/<tag>/` and place it on your `PATH`.
-
-Verify the install:
+### Homebrew
 
 ```bash
-skippr --version
+brew tap skipprd/tap
+brew install sde skipprd
 ```
 
-The same binary also calls Skippr Cloud. After `skippr login --email you@example.com`, run Cloud commands such as `skippr tables list-tables`. See [CLI and SDKs](/cloud/cli). ELT account login stays `sde user login`.
+### GitHub Releases
+
+Download linux x86_64 / darwin arm64 tarballs from [sde releases](https://github.com/skipprd/sde/releases) and [skipprd releases](https://github.com/skipprd/skipprd/releases). Place both binaries on PATH.
+
+Verify:
+
+```bash
+sde --version
+skipprd --version
+```
+
+Cloud `skippr` is a different product. Install that from [skippr.io](https://skippr.io/cloud/cli/) if you need Cloud APIs.
 
 ## Install OpenSSL (Windows only)
 
@@ -61,9 +43,9 @@ After installing, restart your terminal so the `openssl` command is available.
 
 ## Install Python and dbt
 
-`skippr` uses dbt under the hood for model compilation and materialisation. The first-run path is:
+`sde model` uses dbt for compilation and materialisation. The first-run path is:
 
-1. install `skippr`
+1. install `sde` and `skipprd`
 2. create a Python virtual environment
 3. install `dbt-core` plus your warehouse adapter
 4. authenticate
@@ -113,11 +95,9 @@ Then install the adapter for your warehouse:
 | ClickHouse | `pip install dbt-clickhouse` |
 | MotherDuck | `pip install dbt-duckdb` |
 
-Verify with `dbt --version`. The virtual environment must be active whenever you run `skippr`.
+Verify with `dbt --version`. The virtual environment must be active whenever you run `sde model`.
 
 ## Authenticate
-
-Log in or create a new Skippr account (same command for both):
 
 ```bash
 sde user login
@@ -143,7 +123,7 @@ set SKIPPR_API_KEY=sk_live_...
 
 See [Authentication](authentication.md) for API key management and details.
 
-Authentication enables cloud-backed control-plane services and provides a hosted LLM key by default. Row-level source data still moves directly from the machine running `skippr` to your destination.
+Authentication enables cloud-backed control-plane services and provides a hosted LLM key by default. Row-level source data still moves directly from the machine running `sde` to your destination.
 
 ## Next steps
 

@@ -17,13 +17,13 @@ description: "List and run dbt tests with sde test against the same generated pr
 **List tests**
 
 ```bash
-skippr [--config <path>] [--log [level]] test list --pipeline <name> [--output json|text]
+sde [--config <path>] [--log [level]] test list --pipeline <name> [--output json|text]
 ```
 
 **Run tests**
 
 ```bash
-skippr [--config <path>] [--log [level]] test run --pipeline <name> [--select <expr>]... [--output jsonl|json|text]
+sde [--config <path>] [--log [level]] test run --pipeline <name> [--select <expr>]... [--output jsonl|json|text]
 ```
 
 ## Flags

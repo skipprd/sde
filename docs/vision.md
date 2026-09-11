@@ -30,7 +30,7 @@ Ingestion correctness does not depend on model output. Schema discovery, type ma
 ## How Skippr stays reviewable
 
 - **Reviewable output**: Skippr writes standard dbt files and warehouse assets you can inspect and extend.
-- **Clear data boundary**: row-level source data stays on the machine running `skippr` and in your destination.
+- **Clear data boundary**: row-level source data stays on the machine running `sde` and in your destination.
 - **Scoped AI input**: schema metadata is the default model input. Data samples are optional and off by default.
 - **CDC semantics**: the CDC docs explain how order tokens, tombstones, and exactly-once final-state behavior work in supported paths.
 
