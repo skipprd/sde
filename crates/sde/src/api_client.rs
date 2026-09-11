@@ -109,7 +109,7 @@ impl ApiClient {
     fn http_client() -> reqwest::Client {
         // Cloudflare bot fight mode rejects the default reqwest User-Agent on some edges.
         reqwest::Client::builder()
-            .user_agent(concat!("skippr-cli/", env!("CARGO_PKG_VERSION")))
+            .user_agent(concat!("sde/", env!("CARGO_PKG_VERSION")))
             .build()
             .unwrap_or_else(|_| reqwest::Client::new())
     }
