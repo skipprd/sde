@@ -65,7 +65,7 @@ Same as [`sde model`](/cli/model): `sde user login`, `SKIPPR_API_KEY` in CI, and
 This repository ships **`.github/workflows/docs-vector-ingest.yml`**, which:
 
 1. Checks out the repo.
-2. Installs the CLI with the same public one-liner as [Install](/getting-started/install): `curl -fsSL https://install.skippr.io/install.sh | sh`.
+2. Installs `sde` and `skipprd` as on [Install](/getting-started/install) (`brew tap skipprd/tap && brew install sde skipprd`, or GitHub Releases).
 3. Runs **`bash scripts/vector-ingest-docs.sh`** (which invokes `sde vector ingest-docs` against `./skippr.yml`).
 
 Add a repository secret **`SKIPPR_API_KEY`** for an account that has already accepted the current EULA (interactive `sde user login` once if needed). The workflow runs on **`workflow_dispatch`** and on pushes to **`main`** / **`master`** that touch `docs/`, `skippr.yml`, or the ingest script.
