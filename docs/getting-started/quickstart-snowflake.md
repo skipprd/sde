@@ -5,7 +5,7 @@ description: "Quick start: extract SQL Server into Snowflake with Skippr. Six co
 
 ## Install
 
-<InstallTabs :show-heading="false" />
+<InstallTabs :show-heading="false" docs-href="/getting-started/install" unix-cmd="brew tap skipprd/tap && brew install sde skipprd" win-cmd="See the install guide for GitHub Releases" />
 
 Six commands to go from a SQL Server database to materialised dbt models in Snowflake -- bronze, silver, and gold layers, all generated and validated automatically.
 
@@ -115,7 +115,3 @@ data_sinks:
 - Re-run `sde model --pipeline mssql-migration` to resume the latest modeling thread. Use `sde model --pipeline mssql-migration --no-resume` when you want a clean modeling attempt.
 - The dbt project is yours. Add tests, snapshots, or custom gold models.
 - See [How It Works](how-it-works.md) for the full pipeline breakdown.
-
-## Install
-
-<InstallTabs :show-heading="false" />
